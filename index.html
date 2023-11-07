@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./fonts/cour.ttf">
+    <script src="indes.js"></script>
+    <meta charset="UTF-8">
+    <title>Adivina el número secreto</title>
+</head>
+<body>
+    <h1 id="titulo">Adivina el número secreto</h1>
+
+    <!-- Section de los numeros ya adivinados -->
+    <section id="numerosAdivinados">
+        <article class="numerosAdivinado">
+            <p><b>*</b></p>
+        </article>
+        <article class="numerosAdivinado">
+            <p><b>*</b></p>
+        </article>
+        <article class="numerosAdivinado">
+            <p><b>*</b></p>
+        </article>
+        <article class="numerosAdivinado">
+            <p><b>*</b></p>
+        </article>
+        <article class="numerosAdivinado">
+            <p><b>*</b></p>
+        </article>
+    </section>
+
+
+
+    <!-- Section donde el usuario escribira los numeros y habra el boton para hacer uncionar la página-->
+    <section id="comprobar">
+        <form action="" id="form_input">
+            <legend id="titulo_2">Escribe aquí el número</legend>
+            <input type="number" id="input">
+            <button id="buttonComprobar">Comprobar</button>
+        </form>
+    </section>
+
+
+    <!-- Aviso si el usuario ha acertado, solo sale cuando acabe el usuario -->
+    <div id="mensaje"><p>Has acertado, enhorabuena!!</p></div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
+
+:root {
+    --azul_background: rgba(26,161,240,255);
+    --azul_letra_pequeña: rgba(56,161,241,255);
+}
+  
+#titulo {
+    color: blue;
+    font-family: 'Courier Prime', monospace;
+    font-size: 50px;
+    text-align: center;
+}
+
+/* Section 1, numeros ya adibinados*/
+#numerosAdivinados {
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.numerosAdivinado {
+    flex-shrink: 0;
+    margin-top: 10px;
+    width: 110px;
+    height: 110px;
+    background-color: var(--azul_background);
+    border-radius: 12px;
+}
+.numerosAdivinado p {
+    text-align: center;
+    font-size: 30px;
+}
+
+
+/* Section 2, donde el usuario interactuara con el usuario*/
+
+#comprobar {
+    border: 2px solid var(--azul_background);
+    border-radius: 7px;
+    width: 650px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#form_input {
+    width: 93%;
+    margin: 10px auto;
+}
+
+#titulo_2 {
+    color: var(--azul_letra_pequeña);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+#input {
+    border: none;
+    border-bottom: 3px solid var(--azul_background);
+    border-radius: 5px 5px 0 0;
+    margin: auto;
+    width: 95%;
+    height: 50px;
+    outline: none;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+#input:hover , #input:focus {
+    background-color: rgba(139, 132, 132, 0.452);
+}
+
+#buttonComprobar {
+    margin: auto;
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--azul_background);
+    font-size: 35px;
+    color: white;
+
+}
+
+#active {
+    visibility: hidden;
+    position: absolute;
+}
+
+/* Mensage que le daremos al usuario */
+
+#mensaje {
+    margin: auto;
+    margin-top: 30px;
+    width: 650px;
+    height: 55px;
+    padding: 0 0 0 20px;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+}
+#mensaje > p {
+    margin: auto 0;
+    font-size: 20px;
+}
