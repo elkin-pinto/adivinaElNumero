@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./fonts/cour.ttf">
-    <script src="indes.js"></script>
+    <script src="index.js"></script>
     <meta charset="UTF-8">
     <title>Adivina el número secreto</title>
 </head>
@@ -33,15 +33,23 @@
 
     <!-- Section donde el usuario escribira los numeros y habra el boton para hacer uncionar la página-->
     <section id="comprobar">
-        <form action="" id="form_input">
+        <div id="form_input">
             <legend id="titulo_2">Escribe aquí el número</legend>
-            <input type="number" id="input">
-            <button id="buttonComprobar">Comprobar</button>
-        </form>
+            <input type="number" id="input" value="01234">
+            <button id="buttonComprobar" onclick="adivina_el_numero()">Comprobar</button>
+        </div>
     </section>
 
 
     <!-- Aviso si el usuario ha acertado, solo sale cuando acabe el usuario -->
-    <div id="mensaje"><p>Has acertado, enhorabuena!!</p></div>
+    <div id="mensaje"><p>1er intento, buena suerte!!</p></div>
+
+
+    <!-- Cuadrados grises donde saldran los numeros que los usuarios has puesto -->
+    <section id="result">
+    </section>
+
+
+
 </body>
 </html>
