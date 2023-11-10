@@ -2,6 +2,7 @@
 
 :root {
     --azul_background: rgba(26,161,240,255);
+    --azul_click: rgba(50,190,240,255);
     --azul_letra_pequeña: rgba(56,161,241,255);
     --rojo_apartado_info: rgba(220,20,60,255);
     --gris_apartado_result: rgba(186,186,186,255);
@@ -97,6 +98,10 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 35px;
     color: white;
 
+}
+
+#buttonComprobar:active {
+    background-color: var(--azul_click);
 }
 
 #active {

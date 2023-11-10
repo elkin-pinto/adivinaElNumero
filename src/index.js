@@ -11,6 +11,11 @@ for (i = 0; i < maxiteracio; i++) {
     valor_input_inicial += i;
 }
 
+
+
+console.log(numero_aleatorio)
+
+
  /* Con esta funcion haremos que los cuadros de codigo se ajusten a la maxima iteracion que pongamos */
 function onload() {
     let section_codigo = document.getElementById("numerosAdivinados");
@@ -40,17 +45,7 @@ function adivina_el_numero() {
         document.getElementById("mensaje").getElementsByTagName("p")[0].innerHTML = "El valor enviado no cumple las condiciones";
     }
 
-
-    /* Le daremos a cada uno de los cuadrados de las secion codigo el valor del numero secreto correspondiente ya que el usuario a perdido */
-    else if (intentos == (maxiteracio - 1)) {
-        document.getElementById("mensaje").getElementsByTagName("p")[0].innerHTML = "GAME OVER, Recarga la pagina para volver a jugar ;D";
-        let article = document.getElementsByClassName("numerosAdivinado");
-        for (i = 0 ; i < maxiteracio; i++) {
-            article[i].getElementsByTagName("p")[0].getElementsByTagName("b")[0].innerHTML = numero_aleatorio[i]
-            article[i].style.backgroundColor = "var(--gris_apartado_result)"
-        }
-    }
-    else if (intentos != -1) {
+    else if (intentos != -100) {
 
         /* Cogemos el SECTION de result y le agregaremos una estrctura que consiste
         en un article con 5 div y 5 p cada uno, tambien le ponemos una clase a los articles
@@ -75,13 +70,12 @@ function adivina_el_numero() {
 
         /* Creamos un array que guardaremos el numero de veces que aparece un numero, lo usaremos para que cuando hagamos la revision no salgan errores */
         let numeros_array = [];
-        for (i=0;i<maxiteracio;i++) {
+        for (i=0;i<10;i++) {
             numeros_array[i] = 0;
         }
-        for (i = 0;i < maxiteracio;i++) {
+        for (i = 0;i < 10;i++) {
             numeros_array[numero_aleatorio[i]] += 1;
         }
-        
 
         let div = article.getElementsByTagName("div");
         for (i = 0 ; i < maxiteracio; i++) {
@@ -108,14 +102,27 @@ function adivina_el_numero() {
         , ademas mostraremos el numero secreto y un mensaje por la secion de info */
 
         if (numero_aleatorio == numero) {
-            intentos = -1
+            intentos = -100
             document.getElementById("mensaje").getElementsByTagName("p")[0].innerHTML = "Enhora buena, has ganado, Recarga la pagina para volver a jugar ;D";
             let article_codigo = document.getElementsByClassName("numerosAdivinado");
             for (i = 0 ; i < maxiteracio; i++) {
             article_codigo[i].getElementsByTagName("p")[0].getElementsByTagName("b")[0].innerHTML = numero_aleatorio[i];
             article_codigo[i].style.backgroundColor = "var(--verde_apartado_result)";
-        }
+            }
         }
         
+    }
+
+
+
+
+    /* Le daremos a cada uno de los cuadrados de las secion codigo el valor del numero secreto correspondiente ya que el usuario a perdido */
+    if (intentos == maxiteracio) {
+        document.getElementById("mensaje").getElementsByTagName("p")[0].innerHTML = "GAME OVER, Recarga la pagina para volver a jugar ;D";
+        let article = document.getElementsByClassName("numerosAdivinado");
+        for (i = 0 ; i < maxiteracio; i++) {
+            article[i].getElementsByTagName("p")[0].getElementsByTagName("b")[0].innerHTML = numero_aleatorio[i]
+            article[i].style.backgroundColor = "var(--gris_apartado_result)"
+        }
     }
 }
