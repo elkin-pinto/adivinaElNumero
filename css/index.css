@@ -71,6 +71,9 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+input[type=number] { -moz-appearance:textfield; }
+
 #input {
     border: none;
     border-bottom: 3px solid var(--azul_background);
